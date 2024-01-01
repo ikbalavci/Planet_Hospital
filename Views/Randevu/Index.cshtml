@@ -6,7 +6,7 @@
     <h2 style="color:red">@TempData["basarili"]</h2>
 }
 
-<h1>Hastane Randevuları</h1>
+<h1>@_localization.Getkey("HastaneRandevular").Value</h1>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -14,17 +14,17 @@
                 Id
             </th>
             <th>
-                HastaId
+                @_localization.Getkey("Hasta").Value
             </th>
            
             <th>
-                Doktor
+                @_localization.Getkey("Doktor").Value
             </th>
             <th>
-                RandevuTarihi
+                @_localization.Getkey("RandevuTarihi").Value
             </th>
             <th>
-                RandevuSaati
+                @_localization.Getkey("RandevuSaati").Value
             </th>
 
             <th>
@@ -45,10 +45,10 @@
                 @if (User.IsInRole(UserRoles.Role_Admin))
                 {
                     <td>
-                        <a asp-controller="Randevu" asp-action="EkleGuncelle" asp-route-id="@randevu.Id" type="button" class="btn btn-success" style="width:150px">Güncelle</a>
+                        <a asp-controller="Randevu" asp-action="EkleGuncelle" asp-route-id="@randevu.Id" type="button" class="btn btn-success" style="width:150px">@_localization.Getkey("Güncelle").Value</a>
                     </td>
                     <td>
-                        <a asp-controller="Randevu" asp-action="Sil" asp-route-id="@randevu.Id" type="button" class="btn btn-danger" style="width:150px">Sil</a>
+                        <a asp-controller="Randevu" asp-action="Sil" asp-route-id="@randevu.Id" type="button" class="btn btn-danger" style="width:150px">@_localization.Getkey("Sil").Value</a>
                 </td>
                 }
             </tr>
@@ -57,8 +57,8 @@
 </table>
 
     <div class="row pt-3 pb3">
-        <div>    
-            <a asp-controller="Randevu" asp-action="EkleGuncelle" class="btn btn-primary" type="button">Oluştur</a>
+        <div>
+        <a asp-controller="Randevu" asp-action="EkleGuncelle" class="btn btn-primary" type="button">@_localization.Getkey("Oluştur").Value</a>
         </div>
     </div>
 
